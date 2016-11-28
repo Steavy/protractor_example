@@ -28,18 +28,6 @@ describe('Quality Shepherd blog', function() {
 		expect(qsHomePage.search.noResultsMsg.isDisplayed()).toBe(true);
 	});
 
-	it('should open social media link in new window', function() {
-		qsHomePage.githubLink.click();
-		// switch to the new winwow/tab... 
-		qsHomePage.switchToWindow(NEWWIN, githubPage);
-
-		expect(githubPage.at()).toBe(true);
-
-		// cleanup: close new window and switch back to original window...
-        browser.close(); 
-        qsHomePage.switchToWindow(DEFAULTWIN, qsHomePage);
-	});
-
 	it('sidebar should have a set width', function() {
 		expect(qsHomePage.sidebar.getWidth()).toBe(280);
 	});

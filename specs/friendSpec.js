@@ -19,6 +19,12 @@ describe ('angular app', function() {
         expect(friendPage.inResults(friendName)).toBeTruthy();
     });
 
+    it('should add a new custom friend', function() {
+        friendPage.addFriend('Steavy');
+
+        expect(friendPage.inResults('Steavy')).toBeTruthy();
+    });
+
     it('should delete an existing friend', function() {
         friendPage.deleteFriend('Paul');
 
